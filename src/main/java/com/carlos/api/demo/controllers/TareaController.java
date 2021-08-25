@@ -22,19 +22,19 @@ public class TareaController {
     TareaService tareaService;
 
     @GetMapping()
-    @CrossOrigin(origins="http://react-redux-tareas-app.web.app/")
+    @CrossOrigin(origins="https://react-redux-tareas-app.web.app/")
     @ApiOperation(value = "Obtiene todas las tareas ", notes = "Retorna todas las tareas de la base de datos" )
     public ArrayList<TareaModel> obtenerTareas(){
         return tareaService.obtenerTareas();
     }
-    @CrossOrigin(origins="react-redux-tareas-app.web.app/")
+    @CrossOrigin(origins="https://react-redux-tareas-app.web.app/")
     @PostMapping()
     @ApiOperation(value = "Guarda tareas ", notes = "Retorna estado del resultado " )
     public TareaModel guardarTareas(@RequestBody TareaModel tarea){
         return this.tareaService.guardarTareas(tarea);
     }
 
-    @CrossOrigin(origins="http://react-redux-tareas-app.web.app/")
+    @CrossOrigin(origins="https://react-redux-tareas-app.web.app/")
     @GetMapping( path = "/{id}")
     @ApiOperation(value = "Obtiene las tarea por ID ", notes = "Retorna Tarea buscada " )
     public Optional<TareaModel> obtenerTareaPorId(@PathVariable("id") Long id) {
@@ -42,7 +42,7 @@ public class TareaController {
     }
 
 
-    @CrossOrigin(origins="http://react-redux-tareas-app.web.app/")
+    @CrossOrigin(origins="https://react-redux-tareas-app.web.app/")
     @DeleteMapping( path = "/{id}")
     @ApiOperation(value = "Elimina las tarea por ID ", notes = "Retorna estado del resultado" )
     public String eliminarPorId(@PathVariable("id") Long id){
